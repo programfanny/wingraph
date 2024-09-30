@@ -1,0 +1,73 @@
+#include <windows.h>
+#include "graphres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+// Menu
+GRAPHMENU MENU DISCARDABLE 
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&New", IDM_GRAPH_NEW
+		MENUITEM "&Open", IDM_GRAPH_OPEN
+		MENUITEM "&Save", IDM_GRAPH_SAVE
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit", IDM_APP_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Undo", IDM_EDIT_UNDO
+		MENUITEM SEPARATOR
+		MENUITEM "C&ut", IDM_EDIT_CUT
+		MENUITEM "&Copy", IDM_EDIT_COPY
+		MENUITEM "&Paste", IDM_EDIT_PASTE
+		MENUITEM "De&lete", IDM_EDIT_CLEAR
+	END
+	POPUP "&Algorithm"
+	BEGIN
+		MENUITEM "&DFS", IDM_GRAPH_DFS , CHECKED
+		MENUITEM "&BFS Gray", IDM_GRAPH_BFS
+		MENUITEM "&DIJKSTRA", IDM_GRAPH_DIJKSTRA
+		MENUITEM "&FLOYD", IDM_GRAPH_FLOYD
+		MENUITEM "&PRIM", IDM_GRAPH_PRIM
+	END
+
+	POPUP "&Timer"
+	BEGIN
+		MENUITEM "&Start", IDM_TIMER_START
+		MENUITEM "S&top", IDM_TIMER_STOP
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Help...", IDM_APP_HELP
+		MENUITEM "&About MenuDemo...", IDM_APP_ABOUT
+	END
+END
+////////////////////////////////////////////////////////////////
+//menu
+/*
+IDC_MYMENU MENU DISCARDABLE 
+POPUP "MyMenu"
+BEGIN
+	MENUITEM "&About...", IDM_ABOUT 
+	MENUITEM "E&xit"，IDM_EXIT
+END
+*/
+//////////////////////////////////////////////////////////////////////
+//Dialog
+IDD_DIALOG_ABOUT DIALOGEX 0,0,290,59
+STYLE DS_SETFONT|DS_MODALFRAME|DS_FIXEDSYS|WS_POPUP|WS_CAPTION|WS_SYSMENU
+CAPTION "Dialog"
+FONT 8,"MS Shell Dlg", 400,0,0x1
+BEGIN
+	LTEXT "Windows Resource Demo",3001,26,14,119,8,SS_NOPREFIX
+	LTEXT "Copyright (C) 2024 By Programfanny",3002,26,30,119,8
+	DEFPUSHBUTTON "OK",IDOK,234,14,32,14,WS_GROUP
+	DEFPUSHBUTTON "Quit",IDCANCEL,234,31,32,14,WS_GROUP
+END
+///////////////////////////////////////////////////////////////////////
+//
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_APP_TITLE, "Graph Demo"
+
+END
